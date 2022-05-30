@@ -1,0 +1,2 @@
+- hide all complexities inside facade
+- high level method uses complex low level methods

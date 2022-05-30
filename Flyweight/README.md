@@ -1,0 +1,3 @@
+- space optimization technique
+- try to save memory
+- by storing the data extrnally associated with similar objects
