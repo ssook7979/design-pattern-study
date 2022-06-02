@@ -13,7 +13,7 @@ class Circle {
     +draw()
     +resize()
 }
-Shape <|-- Circle
+Shape <|.. Circle
 
 @enduml
 ```
@@ -35,9 +35,9 @@ class RasterCircle {
     +draw()
     +resize()
 }
-Shape <|-- Circle
-Shape <|-- VectorCircle
-Shape <|-- RasterCircle
+Shape <|.. Circle
+Shape <|.. VectorCircle
+Shape <|.. RasterCircle
 
 @enduml
 ```
@@ -69,10 +69,10 @@ class RasterCircle {
     +draw()
     +resize()
 }
-Shape <|-- VectorCircle
-Shape <|-- RasterCircle
-Shape <|-- VectorSquare
-Shape <|-- RasterSquare
+Shape <|.. VectorCircle
+Shape <|.. RasterCircle
+Shape <|.. VectorSquare
+Shape <|.. RasterSquare
 
 @enduml
 ```
@@ -110,11 +110,11 @@ class VectorRenderer {
 }
 note "renderer.render()" as n1
 Shape *-> Renderer
-Shape::draw .. n1
-Shape <|-- Circle
-Shape <|-- Square
-Renderer <|-- RasterRenderer
-Renderer <|-- VectorRenderer
+Shape::draw -l- n1
+Shape <|.. Circle
+Shape <|.. Square
+Renderer <|.. RasterRenderer
+Renderer <|.. VectorRenderer
 @enduml
 ```
 - 클래스의 구조를 추상 클래스와 구현 클래스 계층구조로 분리한다.
@@ -165,10 +165,10 @@ class DotRenderer {
     +render()
 }
 Shape *-> Renderer
-Shape <|-- Circle
-Shape <|-- Square
-Shape <|-- Triangle
-Renderer <|-- RasterRenderer
-Renderer <|-- VectorRenderer
-Renderer <|-- DotRenderer
+Shape <|.. Circle
+Shape <|.. Square
+Shape <|.. Triangle
+Renderer <|.. RasterRenderer
+Renderer <|.. VectorRenderer
+Renderer <|.. DotRenderer
 @enduml
