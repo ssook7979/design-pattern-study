@@ -1,0 +1,15 @@
+@startuml
+entity "TreeManager" as TreeManager {
+    treeArray: Tree[]
+    --
+    +displayTree()
+}
+entity "Tree" as Tree {
+    x: integer
+    y: integer
+    age: integer
+    --
+    +display()
+}
+TreeManager ..> Tree
+@enduml
