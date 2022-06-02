@@ -1,0 +1,53 @@
+@startuml
+abstract RemoteControl {
+    -implementor
+    --
+    +on()
+    +off()
+    +setChannel()
+}
+interface Tv {
+    --
+    +on()
+    +off()
+    +tuneChannel()
+}
+
+class RCAControl {
+    --
+    +on()
+    +off()
+    +setChannel()
+}
+class SonyControl {
+    --
+    +on()
+    +off()
+    +setChannel()
+}
+
+legend
+만일 
+end legend
+
+class RCA {
+    --
+    +on()
+    +off()
+    +tuneChannel()
+}
+class Sony{
+    --
+    +on()
+    +off()
+    +tuneChannel()
+}
+note "implementor.tuneChannel(channel)" as n1
+RemoteControl <|-- RCAControl
+RemoteControl <|-- SonyControl
+RemoteControl::implementor --* Tv
+RemoteControl::setChannel .. n1
+n1 .. Tv::tuneChannel
+Tv <|-- RCA
+Tv <|-- Sony
+@enduml
